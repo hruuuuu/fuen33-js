@@ -7,6 +7,55 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      let farm = [
+        {
+          id: 1,
+          name: '豬',
+          en: 'pig',
+          male: 11,
+          female: 5,
+          isLarge: false,
+        },
+        {
+          id: 2,
+          name: '虎',
+          en: 'tiger',
+          male: 3,
+          female: 10,
+          isLarge: true,
+        },
+        {
+          id: 3,
+          name: '馬',
+          en: 'horse',
+          male: 8,
+          female: 5,
+          isLarge: true,
+        },
+
+        {
+          id: 4,
+          name: '羊',
+          en: 'sheep',
+          male: 22,
+          female: 24,
+          isLarge: false,
+        },
+        {
+          id: 5,
+          name: '兔',
+          en: 'rabbit',
+          male: 37,
+          female: 4,
+          isLarge: false,
+        },
+      ];
+
+      for (let animal of farm) {
+        let animalField = animal.isLarge || animal.male + animal.female > 20 ? '大' : '小';
+        console.log(`動物${animal.name}，需要${animalField}場地`);
+      }
+    </script>
   </body>
 </html>

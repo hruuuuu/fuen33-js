@@ -7,6 +7,53 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      let fruit = 'lemon';
+      let sweet = true;
+
+      /*
+      // if/ else
+      if (fruit === 'apple') {
+        console.log('是蘋果');
+      } else {
+        console.log('不是蘋果');
+      }
+
+      // if/ else if/ else
+      if (fruit === 'lemon') {
+        console.log('是檸檬');
+      } else if (fruit === 'apple') {
+        console.log('是蘋果');
+      } else {
+        console.log('未知的水果');
+      }
+
+      // 巢狀條件判斷
+      if (fruit === 'lemon') {
+        console.log('是檸檬');
+        if (sweet) {
+          console.log('甜');
+        } else {
+          console.log('不甜');
+        }
+      } else if (fruit === 'apple') {
+        console.log('是蘋果');
+      } else {
+        console.log('未知的水果');
+      }
+      */
+
+      switch (fruit) {
+        case 'lemon':
+          console.log('檸檬');
+          break;
+        case 'apple':
+          console.log('蘋果');
+          break;
+        default:
+          console.log('未知的水果');
+          break;
+      }
+    </script>
   </body>
 </html>
