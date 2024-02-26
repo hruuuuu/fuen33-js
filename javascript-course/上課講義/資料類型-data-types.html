@@ -7,6 +7,142 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      /*
+      // 基本型別
+      let a = 'a'; // 字串
+      console.log(a);
+      let b = 1; // 數字
+      console.log(b);
+      let c = true; // 布林值 true/ false
+      console.log(c);
+      let d; // undefined
+      console.log(d);
+      let e = null; // null
+      console.log(e);
+      */
+
+      let info = {
+        name: 'Allie',
+        color: 'white',
+        greeting: function () {
+          console.log('hi');
+        },
+      };
+      /*
+      console.log(info);
+      console.log(info.name); // 屬性 property
+      console.log(info['color']);
+
+      info.greeting(); // 方法 method
+
+      // 用變數當 key
+      let key = 'color';
+      console.log(info[key]);
+
+
+      let color = 'color';
+      console.log(info['color']);
+      console.log(info[color]);
+      */
+
+      /*
+      console.log(info);
+
+      info.color = 'blue';
+      console.log(info);
+      */
+
+      /*
+      let array = ['apple', 0, false, undefined, null, {name: 'Allie'}];
+      console.log(array);
+
+      let greeting = '肚子好餓喔！ 想吃午餐～';
+      console.log(array[0]);
+      console.log(greeting[0]);
+      console.log(array.length); // 6
+      console.log(greeting.length); // 12
+
+      let lastIndex = greeting.length - 1;
+      console.log(greeting[lastIndex]);
+      */
+
+      /*
+      // 傳值
+      let x = 1;
+      let y = x;
+      console.log('x', x);
+      console.log('y', y);
+
+      y = 2;
+      console.log('x', x);
+      console.log('y', y);
+
+      x = 3;
+      console.log('x', x); // 3
+      console.log('y', y); // 2
+      */
+
+      // 傳址
+      let car1 = {
+        brand: 'BMW',
+        color: 'red',
+      };
+      let car2 = car1;
+
+      // console.log('car1', car1);
+      // console.log('car2', car2);
+
+      /*
+      car2.color = 'blue';
+
+      console.log('car1', car1);
+      console.log('car2', car2);
+      */
+
+      // car2 = {
+      //   color: 'yellow',
+      // };
+
+      // console.log('car1', car1);
+      // console.log('car2', car2);
+
+      // Object.assign
+      // let car3 = Object.assign({}, car1);
+      // console.log('car1', car1);
+      // console.log('car3', car3);
+
+      // car3.color = 'green';
+      // console.log('car1', car1);
+      // console.log('car3', car3);
+
+      // 展開運算子
+      // let car4 = {...car1};
+      // console.log('car1', car1);
+      // console.log('car4', car4);
+
+      // car4.color = 'orange';
+      // console.log('car1', car1);
+      // console.log('car4', car4);
+
+      let car5 = {
+        color: 'white',
+        owner: {
+          name: 'Allie',
+        },
+      };
+
+      let car6 = {...car5};
+      // console.log('car5', car5);
+      // console.log('car6', car6);
+
+      car6.color = 'black';
+      console.log('car5', car5);
+      console.log('car6', car6);
+
+      car6.owner.name = 'Tom';
+      console.log('car5', car5);
+      console.log('car6', car6);
+    </script>
   </body>
 </html>

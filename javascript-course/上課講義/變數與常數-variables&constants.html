@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>變數與常數 Variables & Constants</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>變數與常數 Variables & Constants</title>
-</head>
+  <body>
+    <script>
+      /*
+      let greeting; // 宣告
+      console.log(greeting);
 
-<body>
-  <script></script>
-</body>
+      greeting = 'hi'; // 賦值
+      console.log(greeting);
+      */
 
+      /*
+      let greeting = 'hello'; // 宣告 + 賦值
+      console.log(greeting);
+      */
+
+      /*
+      // let 重新賦值
+      let greeting = 'hello';
+      console.log(greeting);
+      greeting = 'hi';
+      console.log(greeting);
+      */
+
+      /*
+      // var 重新賦值
+      var varGreeting = 'hello';
+      console.log(varGreeting);
+      varGreeting = 'hi';
+      console.log(varGreeting);
+
+      var varGreeting = 'halo'; // var 重新宣告
+      console.log(varGreeting);
+      */
+
+      /*
+      // const 常數
+      const greeting = 'hello'; // 宣告時就需賦值 (初始化)
+      greeting = 'hi'; // 不能重新賦值
+      */
+
+      /*
+      // 作用域
+      function print() {
+        var a = 'a';
+        // let b;
+        if (true) {
+          let b = 'b';
+          const c = 'c';
+
+          // badExample = 'bad example';
+
+          
+          console.log('區塊內部', a); // 'a'
+          console.log('區塊內部', b); // 'b'
+          console.log('區塊內部', c); // 'c'
+          
+          // console.log(badExample);
+        }
+        
+        console.log('函數內部 區塊外部', a); // 'a'
+        // console.log('函數內部 區塊外部', b); // x
+        // console.log('函數內部 區塊外部', c); // x
+        
+        // console.log(badExample);
+      }
+      print();
+
+      // console.log('函數外部 區塊外部', a);
+      // console.log(badExample);
+      */
+
+      /*
+      // var 變數提升
+      console.log(a);
+      var a = 'a';
+      */
+
+      /*
+      var a;
+      console.log(a); // undefined
+      a = 'a';
+      console.log(a); // 'a'
+      */
+
+      /*
+      // let 變數提升
+      console.log(b); // x
+      let b = 'b';
+      */
+
+      console.log(c); // x
+      const c = 'c';
+    </script>
+  </body>
 </html>
