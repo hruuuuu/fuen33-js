@@ -56,6 +56,20 @@
         let animalField = animal.isLarge || animal.male + animal.female > 20 ? '大' : '小';
         console.log(`動物${animal.name}，需要${animalField}場地`);
       }
+
+      let newFarm = [];
+      for (let i = 0; i < farm.length; i++) {
+        let animal = {...farm[i]};
+        if (animal.id % 2 === 0) {
+          animal.area = 'B';
+        } else {
+          animal.area = 'A';
+        }
+        newFarm[i] = animal;
+      }
+
+      console.log(farm);
+      console.log(newFarm);
     </script>
   </body>
 </html>
