@@ -7,6 +7,64 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      let farm = [
+        {
+          id: 1,
+          name: '豬',
+          en: 'pig',
+          male: 11,
+          female: 5,
+          isLarge: false,
+        },
+        {
+          id: 2,
+          name: '虎',
+          en: 'tiger',
+          male: 3,
+          female: 10,
+          isLarge: true,
+        },
+        {
+          id: 3,
+          name: '馬',
+          en: 'horse',
+          male: 9,
+          female: 8,
+          isLarge: true,
+        },
+
+        {
+          id: 4,
+          name: '羊',
+          en: 'sheep',
+          male: 22,
+          female: 34,
+          isLarge: false,
+        },
+        {
+          id: 5,
+          name: '兔',
+          en: 'rabbit',
+          male: 37,
+          female: 4,
+          isLarge: false,
+        },
+      ];
+
+      const noEAnimals = farm.filter((item) => !item.en.includes('e'));
+      const sortAnimals = noEAnimals.sort((a, b) => a.female - b.female);
+
+      console.log(sortAnimals);
+
+      const countAnimal = sortAnimals.reduce((total, item) => total + item.female, 0);
+      console.log(countAnimal);
+
+      let total = 0;
+      for (let animal of sortAnimals) {
+        total += animal.female;
+      }
+      console.log(total);
+    </script>
   </body>
 </html>

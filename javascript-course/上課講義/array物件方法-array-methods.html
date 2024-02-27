@@ -8,15 +8,6 @@
 
   <body>
     <script>
-      const products = [
-        {name: '筆記型電腦', category: '電子產品', price: 30000, stock: 10},
-        {name: '襯衫', category: '服裝', price: 200, stock: 500},
-        {name: '咖啡機', category: '家電', price: 4000, stock: 5},
-        {name: '書籍', category: '文學', price: 300, stock: 100},
-        {name: '智能手機', category: '電子產品', price: 20000, stock: 15},
-        {name: '牛仔褲', category: '服裝', price: 600, stock: 30},
-      ];
-
       /*
       // 顯性強制轉型
       let greeting = 'hi';
@@ -100,6 +91,8 @@
       console.log(fruits.includes('cherry')); // false
       */
 
+      /*
+      // forEach
       fruits.forEach(function (fruit, i, fruits) {
         console.log(`水果: ${fruit}, index: ${i}, 在${fruits}水果籃之中`);
       });
@@ -111,6 +104,79 @@
       });
 
       console.log(fruits);
+      */
+
+      /*
+      // 取得最後一個元素
+      console.log(fruits[fruits.length - 1]);
+      console.log(fruits.at(-1));
+      */
+
+      const products = [
+        {name: '筆記型電腦', category: '電子產品', price: 30000, stock: 10},
+        {name: '襯衫', category: '服裝', price: 200, stock: 500},
+        {name: '咖啡機', category: '家電', price: 4000, stock: 5},
+        {name: '書籍', category: '文學', price: 300, stock: 100},
+        {name: '智能手機', category: '電子產品', price: 20000, stock: 15},
+        {name: '牛仔褲', category: '服裝', price: 600, stock: 30},
+      ];
+
+      let productNames = products.map((item, i, arr) => {
+        return item.name;
+      });
+
+      let productNames1 = products.map((item, i, arr) => item.name);
+      let productNames2 = products.map((item) => item.name);
+
+      console.log(productNames); // ['筆記型電腦', '襯衫', '咖啡機', '書籍', '智能手機', '牛仔褲']
+
+      let electronicProducts = products.filter((item, i, arr) => {
+        return item.category === '電子產品';
+      });
+
+      console.log(electronicProducts);
+
+      let otherProducts = products.filter((item) => {
+        return item.category !== '文學';
+      });
+
+      console.log(otherProducts);
+
+      let acendProducts = products.sort((a, b) => {
+        return a.price - b.price;
+      });
+      console.log(acendProducts);
+
+      let decendProducts = products.sort((a, b) => {
+        return b.price - a.price;
+      });
+      console.log(decendProducts);
+
+      const checkStock = products.some((item) => item.stock < 10);
+      console.log(checkStock);
+
+      const checkPrice = products.every((item) => item.price > 1000);
+      console.log(checkPrice);
+
+      const apparelProduct = products.find((item) => item.category === '服裝');
+      const noResultProduct = products.find((item) => item.stock > 1000);
+      console.log(apparelProduct);
+      console.log(noResultProduct);
+
+      const apparelIndexProduct = products.findIndex((item) => item.category === '服裝');
+      const noResultIndexProduct = products.findIndex((item) => item.stock > 1000);
+
+      console.log(apparelIndexProduct);
+      console.log(noResultIndexProduct);
+
+      /*
+      arr.reduce((accumulator, currentValue)=>{
+        return accumulator + currentValue;
+      }, initialValues)
+      */
+
+      const totalStock = products.reduce((total, item) => total + item.stock, 0);
+      console.log(totalStock);
     </script>
   </body>
 </html>
