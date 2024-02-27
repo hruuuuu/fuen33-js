@@ -7,6 +7,86 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      /*
+      // 參數和引數 parameters & argument
+      function print(name = 'Allie', greeting = 'Hello') {
+        console.log(`${greeting}, ${name}`);
+      }
+      print('hi', 'Tom');
+      print();
+
+      // print(,'Hi');
+
+      function testPrint({name = 'Allie', greeting}) {
+        console.log(name);
+        console.log(greeting);
+      }
+      testPrint({greeting: 'Hi'});
+
+      function printNumbers(...num) {
+        console.log(num);
+      }
+      printNumbers(1, 2, 3, 4, 5, 6);
+      */
+
+      /*
+      // 回調函數 callback
+      function brushTeeth() {
+        console.log('刷牙');
+      }
+
+      function washFace(callback) {
+        console.log('洗臉');
+        callback();
+      }
+
+      function wakeUp(callback, callback2) {
+        console.log('起床');
+        callback(callback2);
+      }
+
+      wakeUp(washFace, brushTeeth);
+      // wakeUp(brushTeeth);
+      */
+
+      /*
+      // 回傳 return
+      function add(a, b) {
+        let num = a + b;
+        return num;
+        // return a + b;
+      }
+
+      let result = add(3, 5);
+      console.log(result);
+
+      console.log(add(3, 5));
+      */
+
+      // 函數表達式
+      let print = function () {
+        console.log('hi');
+      };
+      print();
+
+      // 箭頭函數
+      let arrowPrint = (name, greeting = 'Hello') => {
+        console.log(`${greeting}, ${name}`);
+      };
+
+      arrowPrint('Allie');
+
+      function calculator(a, b) {
+        console.log(a + b);
+        console.log(a - b);
+        console.log(a * b);
+        console.log(a / b);
+        console.log(a % b);
+        console.log(a ** b);
+      }
+
+      calculator(3, 5);
+    </script>
   </body>
 </html>

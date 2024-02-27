@@ -7,6 +7,32 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      function calculator(type, a, b) {
+        switch (type) {
+          case 'add':
+          default:
+            console.log(a + b);
+            break;
+          case 'subtract':
+            console.log(a - b);
+            break;
+          case 'multiply':
+            console.log(a * b);
+            break;
+          case 'divide':
+            console.log(a / b);
+            break;
+          case 'mod':
+            console.log(a % b);
+            break;
+          case 'power':
+            console.log(a ** b);
+            break;
+        }
+      }
+
+      calculator('mod', 3, 5);
+    </script>
   </body>
 </html>
