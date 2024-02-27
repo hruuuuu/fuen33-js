@@ -64,6 +64,7 @@
       console.log(add(3, 5));
       */
 
+      /*
       // 函數表達式
       let print = function () {
         console.log('hi');
@@ -76,6 +77,7 @@
       };
 
       arrowPrint('Allie');
+      */
 
       function calculator(a, b) {
         console.log(a + b);
@@ -87,6 +89,29 @@
       }
 
       calculator(3, 5);
+
+      // greet('Allie');
+      // var greet = (name) => {
+      //   console.log('Hi', name);
+      // };
+      // function greet(name) {
+      //   console.log('Hello', name);
+      // }
+      // greet('Allie');
+
+      (function (greeting) {
+        console.log(greeting);
+      })('Hi');
+
+      ((greeting) => {
+        console.log(greeting);
+      })('Hello');
+
+      let add = ((a = 1, b = 1) => {
+        return a + b;
+      })();
+
+      console.log(add);
     </script>
   </body>
 </html>

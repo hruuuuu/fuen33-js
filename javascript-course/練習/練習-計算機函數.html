@@ -7,6 +7,53 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      function subtract(a, b) {
+        return a - b;
+      }
+
+      function sum(numbers) {
+        let result = 0;
+        for (let number of numbers) {
+          result += number;
+        }
+        return result;
+      }
+
+      function calculator(type, ...numbers) {
+        let a = numbers[0];
+        let b = numbers[1];
+        switch (type) {
+          case 'add':
+          default:
+            return a + b;
+            break;
+          case 'subtract':
+            return subtract(a, b);
+            break;
+          case 'multiply':
+            return a * b;
+            break;
+          case 'divide':
+            return a / b;
+            break;
+          case 'mod':
+            return a % b;
+            break;
+          case 'power':
+            return a ** b;
+            break;
+          case 'sum':
+            return sum(numbers);
+            break;
+        }
+      }
+
+      let sumResult = calculator('sum', 1, 2, 3, 4, 5);
+      let subtractResult = calculator('subtract', 1, 2, 3, 4, 5);
+
+      console.log(sumResult);
+      console.log(subtractResult);
+    </script>
   </body>
 </html>
