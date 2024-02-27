@@ -79,6 +79,7 @@
       arrowPrint('Allie');
       */
 
+      /*
       function calculator(a, b) {
         console.log(a + b);
         console.log(a - b);
@@ -89,16 +90,31 @@
       }
 
       calculator(3, 5);
+      */
 
-      // greet('Allie');
-      // var greet = (name) => {
-      //   console.log('Hi', name);
-      // };
-      // function greet(name) {
-      //   console.log('Hello', name);
-      // }
-      // greet('Allie');
+      /*
+      // 提升 hoisting
+      greeting('Allie');
+      var greeting = (name) => {
+        console.log('Hi', name);
+      };
+      function greeting(name) {
+        console.log('Hello', name);
+      }
+      greeting('Allie');
+      */
 
+      function greeting(name) {
+        console.log('Hello', name);
+      }
+      greeting('Allie');
+      var greeting = (name) => {
+        console.log('Hi', name);
+      };
+      greeting('Allie');
+
+      /*
+      // 立即執行函數
       (function (greeting) {
         console.log(greeting);
       })('Hi');
@@ -112,6 +128,7 @@
       })();
 
       console.log(add);
+      */
     </script>
   </body>
 </html>

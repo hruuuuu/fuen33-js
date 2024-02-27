@@ -16,6 +16,101 @@
         {name: '智能手機', category: '電子產品', price: 20000, stock: 15},
         {name: '牛仔褲', category: '服裝', price: 600, stock: 30},
       ];
+
+      /*
+      // 顯性強制轉型
+      let greeting = 'hi';
+      console.log(greeting);
+      let greetingObj = new String('hi');
+      console.log(greetingObj);
+
+      let numberObj = new Number(0);
+      console.log(numberObj);
+
+      let booleadObj = new Boolean(true);
+      console.log(booleadObj);
+
+      console.log(new Number('1'));
+      console.log(new Boolean('true'));
+      console.log(new Boolean(12));
+      console.log(new Boolean(0));
+      console.log(new Boolean(''));
+      */
+
+      let fruits = ['orange', 'grape', 'lemon', 'apple', 'banana'];
+
+      // let fruitsArray = new Array('orange', 'grape', 'lemon', 'apple', 'banana');
+      // console.log(fruitsArray);
+
+      // 加在最後
+      // console.log(fruits.push('peach')); // 6
+      // ['orange', 'grape', 'lemon', 'apple', 'banana', 'peach']
+
+      // 移除最後
+      // console.log(fruits.pop()); // banana
+      // ['orange', 'grape', 'lemon', 'apple']
+
+      // 移除開頭
+      // console.log(fruits.shift()); // orange
+      // ['grape', 'lemon', 'apple', 'banana']
+
+      // 加在開頭
+      // console.log(fruits.unshift('peach', 'watermelon')); // 7
+      // ['peach', 'watermelon', 'orange', 'grape', 'lemon', 'apple', 'banana']
+
+      /*
+      // 切開分割
+      console.log(fruits.slice(2, 3)); // ['lemon']
+      console.log(fruits.slice(1)); // ['grape', 'lemon', 'apple', 'banana']
+      console.log(fruits.slice(-2)); // ['apple', 'banana']
+      */
+
+      // 刪除指定位置的元素並加入新元素
+      // console.log(fruits.splice(1, 2, 'watermelon', 'peach')); // ['grape', 'lemon']
+      // ['orange', 'watermelon', 'peach', 'apple', 'banana']
+
+      /*
+      // 連接陣列
+      let fruits2 = ['watermelon', 'peach'];
+      let fruits3 = ['kiwi'];
+
+      console.log(fruits.concat(fruits2, fruits3)); // ['orange', 'grape', 'lemon', 'apple', 'banana', 'watermelon', 'peach', 'kiwi']
+      console.log([...fruits, ...fruits2, ...fruits3]); // ['orange', 'grape', 'lemon', 'apple', 'banana', 'watermelon', 'peach', 'kiwi']
+      */
+
+      // 排序
+      // console.log(fruits.sort()); // ['apple', 'banana', 'grape', 'lemon', 'orange']
+
+      // 反轉
+      // console.log(fruits.reverse()); // ['banana', 'apple', 'lemon', 'grape', 'orange']
+
+      /*
+      // 尋找 index
+      console.log(fruits.indexOf('grape')); // 1
+      console.log(fruits.indexOf('cherry')); // -1
+      let testFruits = [...fruits];
+      testFruits.push('orange');
+      console.log(testFruits); // ['orange', 'grape', 'lemon', 'apple', 'banana', 'orange']
+      console.log(testFruits.indexOf('orange')); // 0
+      */
+
+      /*
+      // 查詢是否含有元素
+      console.log(fruits.includes('grape')); // true
+      console.log(fruits.includes('cherry')); // false
+      */
+
+      fruits.forEach(function (fruit, i, fruits) {
+        console.log(`水果: ${fruit}, index: ${i}, 在${fruits}水果籃之中`);
+      });
+
+      fruits.forEach((item, i, arr) => {
+        console.log(item);
+        console.log(i);
+        console.log(arr.length);
+      });
+
+      console.log(fruits);
     </script>
   </body>
 </html>
