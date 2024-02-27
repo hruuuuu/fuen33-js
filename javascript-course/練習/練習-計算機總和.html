@@ -7,6 +7,42 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      function calculator(type, ...numbers) {
+        let a = numbers[0];
+        let b = numbers[1];
+        switch (type) {
+          case 'add':
+          default:
+            console.log(a + b);
+            break;
+          case 'subtract':
+            console.log(a - b);
+            break;
+          case 'multiply':
+            console.log(a * b);
+            break;
+          case 'divide':
+            console.log(a / b);
+            break;
+          case 'mod':
+            console.log(a % b);
+            break;
+          case 'power':
+            console.log(a ** b);
+            break;
+          case 'sum':
+            let result = 0;
+            for (let number of numbers) {
+              result += number;
+            }
+            console.log(result);
+            break;
+        }
+      }
+
+      calculator('sum', 1, 2, 3, 4, 5);
+      calculator('multiply', 1, 2, 3, 4, 5);
+    </script>
   </body>
 </html>
