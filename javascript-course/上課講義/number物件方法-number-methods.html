@@ -7,6 +7,62 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      /*
+      console.log(Number(0)); // 0
+      console.log(Number('0')); // 0
+      console.log(Number('0apple')); // NaN
+      console.log(Number.isNaN(NaN)); // true
+      console.log(isNaN('0apple')); // true 檢查轉換成數字時是不是 NaN
+      console.log(Number.isNaN('0apple')); // false 先檢查是不是數字 不是就先回傳 false 了
+      console.log(Number(0.12345)); // 0.12345
+
+      // 空字串是 falsy value
+      console.log(Boolean('')); // false
+      console.log(Number('')); // 0
+      console.log(Number(false)); // 0
+
+      console.log(Number(true)); // 1
+
+      console.log(Number(' ')); // 0
+
+      console.log(Number.isInteger(42)); // true
+      console.log(Number.isInteger(42.2)); // false
+      console.log(Number.parseFloat('42.2')); // 42.2
+      console.log(Number.parseFloat(42.2)); // 42.2
+      console.log(Number.parseInt('42.2')); // 42
+      console.log(Number.parseInt(42.2)); // 42
+      */
+
+      /*
+      console.log(Math.round(3.574)); // 4 四捨五入
+      console.log(Math.floor(3.574)); // 3 無條件捨去
+      console.log(Math.ceil(3.574)); // 4 無條件進位
+      console.log(Math.random()); // 產生 0 - 1 隨機數字
+      console.log(Math.max(7, 1, 5, 3)); // 7
+      console.log(Math.min(7, 1, 5, 3)); // 1
+      console.log(Math.PI); // 3.141592653589793
+      console.log(Math.E); // 2.718281828459045
+      */
+
+      const now = new Date();
+      console.log(now);
+
+      const yesterday = new Date('2024-02-28');
+      const yesterday2 = new Date('2024/02/28');
+      const yesterday3 = new Date('2024.02.28');
+      console.log(yesterday);
+      console.log(yesterday2);
+      console.log(yesterday3);
+
+      console.log(now.getFullYear()); // 2024
+      console.log(now.getMonth()); // 1 (手動 + 1)
+      console.log(now.getDate()); // 29
+      console.log(now.getHours()); // 10
+      console.log(now.getMinutes()); // 45
+      console.log(now.getSeconds()); // 31
+
+      console.log(now.toISOString()); // 2024-02-29T02:47:52.106Z
+    </script>
   </body>
 </html>

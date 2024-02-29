@@ -20,6 +20,17 @@
         '  garlic-bread ',
         '  honey-mustard-chicken ',
       ];
+
+      let newFood = [];
+      food.forEach((item) => {
+        const formatName = item.trim().replaceAll('-', ' ');
+        const firstLetter = formatName.charAt(0).toUpperCase();
+        const otherWords = formatName.substring(1);
+        const newName = `${firstLetter}${otherWords}`;
+        newFood.push(newName);
+      });
+
+      console.log(newFood);
     </script>
   </body>
 </html>
