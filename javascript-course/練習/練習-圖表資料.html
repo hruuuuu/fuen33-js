@@ -101,6 +101,24 @@
 
       console.log(farmInfo);
       // console.log(totalValue);
+
+      const info = Object.entries(farmInfo);
+      console.log(info);
+
+      const xAxis = info
+        .filter(([key, value]) => {
+          return typeof value !== 'number';
+        })
+        .map(([key, value]) => key);
+      console.log(xAxis);
+
+      const data = info
+        .filter(([key, value]) => {
+          return typeof value !== 'number';
+        })
+        .map(([key, value]) => value.count);
+
+      console.log(data);
     </script>
   </body>
 </html>

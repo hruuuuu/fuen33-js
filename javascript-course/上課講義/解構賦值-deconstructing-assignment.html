@@ -7,6 +7,38 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      const fruits = ['lemon', 'banana', 'orange', 'apple'];
+      // const lemon = 'lemon';
+      // const banana = 'banana';
+      // const orange = 'orange';
+      // const apple = 'apple';
+
+      // 陣列用位置賦值
+      // const [lemon, banana, orange, apple] = ['lemon', 'banana', 'orange', 'apple'];
+
+      /*
+      const [lemon, banana, orange, apple, peach] = fruits;
+
+      console.log(lemon);
+      console.log(apple);
+      console.log(peach);
+      */
+
+      const [, banana, orange, apple] = fruits;
+      console.log(banana);
+
+      const fruitsObj = {
+        lemon: '檸檬',
+        banana: '香蕉',
+        orange: '橘子',
+        apple: '蘋果',
+      };
+
+      // 物件用 key 賦值
+      const {lemon, banana: myBanana, orange: myOrange, apple: myApple} = fruitsObj;
+      console.log(lemon);
+      console.log(myBanana);
+    </script>
   </body>
 </html>
