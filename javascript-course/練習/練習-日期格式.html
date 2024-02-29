@@ -7,6 +7,20 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      const now = new Date('2024/01/01');
+
+      const formatDate = (date) => {
+        const month = date.getMonth() > 10 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`;
+        const day = date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`;
+        const hours = date.getHours() > 10 ? date.getHours() : `0${date.getHours()}`;
+        const minutes = date.getMinutes() > 10 ? date.getMinutes() : `0${date.getMinutes()}`;
+
+        const newDate = `${date.getFullYear()}/${month}/${day} ${hours}:${minutes}`;
+        return newDate;
+      };
+
+      console.log(formatDate(now));
+    </script>
   </body>
 </html>

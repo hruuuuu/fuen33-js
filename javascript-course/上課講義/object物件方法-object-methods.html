@@ -7,6 +7,19 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      const info = {
+        name: 'Allie',
+        color: 'white',
+      };
+
+      // 淺拷貝
+      const newInfo = {...info}; // 展開運算子
+      const newInfo2 = Object.assign({}, info); // Object.assign
+
+      newInfo2.color = 'blue';
+      console.log(newInfo2); // {name: 'Allie', color: 'blue'}
+      console.log(info); // {name: 'Allie', color: 'white'}
+    </script>
   </body>
 </html>

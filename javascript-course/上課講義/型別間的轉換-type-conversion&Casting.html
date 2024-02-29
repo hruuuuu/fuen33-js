@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>型別間的轉換 Type Conversion & Casting</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+      const greeting = ['Hello', 'world', '!'];
+      const float = 0.847;
+      const integer = 4;
+      console.log(greeting.toString()); // Hello,world,!
+      console.log(integer.toString());
+      console.log(String(integer));
+      console.log(String(greeting)); // Hello,world,!
+
+      console.log(integer.toFixed(2)); // 4.00
+      console.log(float.toFixed()); // 1
+      console.log(float.toFixed(2)); // 0.85
+
+      const a = '1';
+      const b = 1;
+      console.log(a + b); // 11
+
+      const c = '8';
+      console.log(a * c); // 8
+      console.log(b - c); // -7
+
+      // TypeScipt
+      */
+
+      /*
+      const check = Number('0apple'); // NaN
+      console.log(typeof check === 'number'); // true
+      console.log(typeof check === 'number' && !isNaN(check)); // false NaN 也會被視為數字 所以要檢查兩個
+      */
+
+      // .csv 逗號分隔檔
+      const string = 'Hi,,Hello,world,Taiwan,!';
+      console.log(string.split(',')); // ['Hi', '', 'Hello', 'world', 'Taiwan', '!']
+
+      const array = ['Hello', 'world!'];
+      console.log(array.join(' ')); // Hello world!
+
+      const info = {
+        color: 'white',
+        owner: {
+          name: 'Allie',
+        },
+      };
+
+      console.log(JSON.stringify(info)); // {"name":"Allie","color":"white"}
+
+      const jsonStringInfo = '{"name":"Allie","color":"white"}';
+
+      console.log(JSON.parse(jsonStringInfo)); // {name: 'Allie', color: 'white'}
+
+      // 淺拷貝
+      const shallow1 = {...info};
+      // shallow1.owner.name = 'Amy';
+      // console.log(shallow1);
+      const shallow2 = Object.assign({}, info);
+      // shallow2.owner.name = 'John';
+      // console.log(shallow2);
+      // console.log(info);
+
+      // 深拷貝
+      const newInfo = JSON.parse(JSON.stringify(info));
+      newInfo.owner.name = 'Tom';
+      console.log(newInfo);
+      console.log(info);
+    </script>
+  </body>
+</html>
