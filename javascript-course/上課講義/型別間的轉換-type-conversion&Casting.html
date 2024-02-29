@@ -38,12 +38,14 @@
       console.log(typeof check === 'number' && !isNaN(check)); // false NaN 也會被視為數字 所以要檢查兩個
       */
 
+      /*
       // .csv 逗號分隔檔
       const string = 'Hi,,Hello,world,Taiwan,!';
       console.log(string.split(',')); // ['Hi', '', 'Hello', 'world', 'Taiwan', '!']
 
       const array = ['Hello', 'world!'];
       console.log(array.join(' ')); // Hello world!
+      */
 
       const info = {
         color: 'white',
@@ -52,6 +54,7 @@
         },
       };
 
+      /*
       console.log(JSON.stringify(info)); // {"name":"Allie","color":"white"}
 
       const jsonStringInfo = '{"name":"Allie","color":"white"}';
@@ -72,6 +75,28 @@
       newInfo.owner.name = 'Tom';
       console.log(newInfo);
       console.log(info);
+      */
+
+      const score = {
+        Allie: 80,
+        Tom: 100,
+      };
+
+      console.log(Object.keys(score)); // ['Allie', 'Tom']
+      console.log(Object.values(score)); // [80, 100]
+      console.log(Object.entries(score));
+
+      // 解構 賦值
+      const scoreKeys = Object.entries(score).map(([key, value]) => {
+        return key;
+      });
+
+      const scoreKeys2 = Object.entries(score).map((item) => {
+        return item.key;
+      });
+      console.log(scoreKeys);
+
+      console.log(Object.fromEntries(Object.entries(score)));
     </script>
   </body>
 </html>
