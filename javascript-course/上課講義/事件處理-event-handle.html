@@ -7,6 +7,60 @@
   </head>
 
   <body>
-    <script></script>
+    <div>
+      <button onclick="showAlert()">HTML onclick 呼叫 alert</button>
+      <button id="alertBtn">DOM onclick 呼叫 alert</button>
+      <button id="listenerAlertBtn">DOM addEventListener 呼叫 alert</button>
+    </div>
+    <div>
+      <button id="mouseoverBtn">mouseover 事件</button>
+      <button id="mouseoutBtn">mouseout 事件</button>
+    </div>
+    <div>
+      <input type="text" id="focusInput" value="focus 事件" />
+      <input type="text" id="blurInput" value="blur 事件" />
+    </div>
+    <div>
+      <input type="text" id="keydownInput" value="keydown 事件" />
+      <input type="text" id="keypressInput" value="keypress 事件" />
+      <input type="text" id="keyupInput" value="keyup 事件" />
+    </div>
+    <script>
+      function showAlert() {
+        alert('hi');
+      }
+
+      document.querySelector('#alertBtn').onclick = showAlert;
+
+      document.getElementById('listenerAlertBtn').addEventListener('click', showAlert);
+
+      document.querySelector('#mouseoverBtn').addEventListener('mouseover', function () {
+        console.log('mouseover!');
+      });
+
+      document.querySelector('#mouseoutBtn').addEventListener('mouseout', () => {
+        console.log('mouseout!');
+      });
+
+      document.querySelector('#focusInput').addEventListener('focus', () => {
+        console.log('focus!');
+      });
+
+      document.querySelector('#blurInput').addEventListener('blur', () => {
+        console.log('blur!');
+      });
+
+      document.querySelector('#keydownInput').addEventListener('keydown', () => {
+        console.log('keydown!');
+      });
+
+      document.querySelector('#keypressInput').addEventListener('keypress', () => {
+        console.log('keypress!');
+      });
+
+      document.querySelector('#keyupInput').addEventListener('keyup', () => {
+        console.log('keyup!');
+      });
+    </script>
   </body>
 </html>

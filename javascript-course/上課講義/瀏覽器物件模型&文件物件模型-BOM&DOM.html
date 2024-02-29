@@ -79,7 +79,7 @@
       </div>
     </div>
     <script>
-      console.log(window);
+      // console.log(window);
       // alert('hi');
 
       // const input = prompt('你的名字？', 'Allie');
@@ -100,6 +100,7 @@
       }, 1000);
       */
 
+      /*
       console.log(location);
       console.log(location.href);
       // location.href = 'https://www.google.com/';
@@ -108,6 +109,58 @@
       // history.back();
       // history.forward();
       // history.go(-1);
+      */
+    </script>
+    <script>
+      const tableEl = document.getElementById('table');
+      // console.log(tableEl);
+      tableEl.style.backgroundColor = 'lightgoldenrodyellow';
+      // css kebab-case => js camelCase 駝峰式
+
+      const thEls = document.getElementsByTagName('th');
+      // console.log(thEls);
+      for (let thEl of thEls) {
+        thEl.style.color = 'cornflowerblue';
+      }
+
+      const titleEls = document.getElementsByClassName('title');
+      // console.log(titleEls);
+      // titleEls[0].textContent = '<秘制>蜂蜜大蒜烤雞腿食譜';
+      titleEls[0].innerText = '<秘制>蜂蜜大蒜烤雞腿食譜';
+
+      const imageEl = document.querySelector('.image');
+      // console.log(imageEl);
+      imageEl.src = 'https://pbs.twimg.com/media/FxtvoA7akAENgri.jpg';
+
+      const pEl = document.querySelector('p');
+      pEl.innerHTML = '這是一道<em>非常簡單<em>的料理';
+
+      const strongEls = document.querySelectorAll('strong');
+      // console.log(strongEls);
+      for (let i = 0; i < strongEls.length; i++) {
+        strongEls[i].style.fontSize = '20px';
+      }
+
+      const contentEl = document.querySelector('#content');
+      contentEl.dataset.index = '1';
+
+      const textEl = document.querySelector('#text');
+      textEl.parentNode.parentNode.children[3].querySelector('strong').style.textDecoration = 'underline';
+
+      // console.log(textEl.parentNode.parentNode.firstElementChild);
+      // console.log(textEl.parentNode.parentNode.firstElementChild.nextElementSibling);
+      // console.log(textEl.parentNode.parentNode.lastElementChild);
+      // console.log(textEl.parentNode.parentNode.lastElementChild.previousElementSibling);
+
+      const buttonEl = document.createElement('button');
+      buttonEl.style.backgroundColor = 'lightblue';
+      buttonEl.innerText = '按鈕';
+
+      const containerEl = document.querySelector('.container');
+
+      containerEl.appendChild(buttonEl);
+
+      // buttonEl.remove();
     </script>
   </body>
 </html>
