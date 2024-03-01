@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>表單處理 Form</title>
+    <style>
+      .msg {
+        color: red;
+      }
+    </style>
   </head>
 
   <body>
@@ -22,17 +27,19 @@
       </div>
       <button type="button">普通的按鈕</button>
       <!-- <button type="submit">提交</button> -->
-      <input type="submit" value="提交" />
+      <input type="submit" value="送出資訊表單" />
     </form>
 
-    <form id="signupForm">
+    <form id="signupForm" novalidate>
       <div>
         <label for="accountInput">帳號</label>
         <input type="text" name="account" id="accountInput" required />
+        <div class="msg" id="accountMsg"></div>
       </div>
       <div>
         <label for="passwordInput">密碼</label>
         <input type="password" name="password" id="passwordInput" required minlength="6" maxlength="12" />
+        <div class="msg" id="passwordMsg"></div>
       </div>
       <div>
         <label for="emailInput">Email</label>
@@ -50,6 +57,12 @@
         <label for="fileInput">檔案</label>
         <input type="file" name="file" id="fileInput" />
       </div>
+      <div>
+        <label for="commentTextarea">留言</label>
+        <textarea name="comment" id="commentTextarea" cols="30" rows="10">我想說...</textarea>
+      </div>
+      <button type="submit" form="infoForm">送出資訊表單</button>
+      <button type="submit" form="signupForm">送出註冊表單</button>
     </form>
     <script>
       /*
@@ -68,7 +81,7 @@
       // JSON
       document.querySelector('#infoForm').addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log('表單已經被提交');
+        console.log('資訊表單已經被提交');
         console.log(event.target.elements);
         let formObj = {};
         // formObj.color
@@ -87,6 +100,43 @@
         console.log(formObj);
 
         // JSON.stringify(formObj)
+      });
+
+      // entries array
+      // ['account', 'test123']
+
+      document.querySelector('#signupForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log('註冊表單已被提交');
+        const formData = new FormData(event.target);
+
+        // get set
+        // forData.get('key')
+        // formData.set('key', 'value');
+        // formData.set('account', 'test123@gmail.com');
+
+        for (let [key, value] of formData.entries()) {
+          console.log(key, value);
+        }
+        let isValid = true;
+
+        document.querySelector('#accountMsg').textContent = '';
+        document.querySelector('#passwordMsg').textContent = '';
+
+        if (!formData.get('account')) {
+          document.querySelector('#accountMsg').textContent = '帳號為必填';
+          isValid = false;
+        }
+
+        if (formData.get('password').length < 6) {
+          document.querySelector('#passwordMsg').textContent = '長度需大於6';
+          isValid = false;
+        }
+
+        if (isValid) {
+          console.log('提交成功');
+          // 打 api
+        }
       });
     </script>
   </body>

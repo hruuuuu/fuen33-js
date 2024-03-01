@@ -7,6 +7,15 @@
   </head>
 
   <body>
-    <script></script>
+    <script>
+      const string = 'Hello world';
+      const greeting = /Hello/;
+      console.log(greeting.test(string));
+
+      const place = new RegExp('world');
+      console.log(place.exec(string));
+      console.log(string.match(/or/));
+      console.log(string.replace(place, 'Taiwan'));
+    </script>
   </body>
 </html>
