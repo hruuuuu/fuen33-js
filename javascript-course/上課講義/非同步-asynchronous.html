@@ -6,6 +6,96 @@
     <title>非同步 Asynchronous</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      /*
+      console.log('起床');
+      setTimeout(() => {
+        console.log('刷牙');
+      }, 0);
+      console.log('吃早餐');
+      */
+
+      /*
+      function doWork(work, time, callback) {
+        setTimeout(() => {
+          callback(`完成${work}`);
+        }, time);
+      }
+      */
+
+      // 錯誤
+      // console.log(`起床 ${new Date().toISOString()}`);
+      /*
+      doWork('刷牙', 2000, (result) => {
+        console.log(`${result}, ${new Date().toISOString()}`);
+      });
+      doWork('洗臉', 3000, (result) => {
+        console.log(`${result}, ${new Date().toISOString()}`);
+      });
+      doWork('吃早餐', 5000, (result) => {
+        console.log(`${result}, ${new Date().toISOString()}`);
+      });
+      */
+
+      // callback
+      /*
+      doWork('刷牙', 2000, (result) => {
+        console.log(`${result}, ${new Date().toISOString()}`);
+        doWork('洗臉', 3000, (result) => {
+          console.log(`${result}, ${new Date().toISOString()}`);
+          doWork('吃早餐', 5000, (result) => {
+            console.log(`${result}, ${new Date().toISOString()}`);
+          });
+        });
+      });
+      */
+
+      // 1. 其他程式碼...
+      // 2. 打 API 拿到資料 data (非同步)
+      // 3. 把 data 拿來用
+
+      function doWork(work, time) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // if (work === '刷牙') {
+            //   reject(`無法完成${work}`);
+            // } else {
+            //   resolve(`完成${work}`);
+            // }
+
+            resolve(`完成${work}`);
+          }, time);
+        });
+      }
+
+      /*
+      doWork('刷牙', 2000)
+        .then((result) => {
+          console.log(`${result}, ${new Date().toISOString()}`);
+          return doWork('洗臉', 3000);
+        })
+        .then((result) => {
+          console.log(`${result}, ${new Date().toISOString()}`);
+          return doWork('吃早餐', 5000);
+        })
+        .then((result) => {
+          console.log(`${result}, ${new Date().toISOString()}`);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          console.log('所有工作結束');
+        });
+      */
+
+      const work1 = doWork('刷牙', 2000);
+      const work2 = doWork('洗臉', 3000);
+      const work3 = doWork('吃早餐', 5000);
+
+      Promise.all([work1, work2, work3]).then((results) => {
+        console.log(results);
+      });
+    </script>
   </body>
 </html>
