@@ -7,6 +7,87 @@
   </head>
 
   <body>
-    <script></script>
+    <form id="infoForm">
+      <div>
+        <label for="nameInput">姓名</label>
+        <input type="text" name="name" value="Allie" id="nameInput" />
+      </div>
+      <div>
+        <label for="colorInput">喜歡的顏色</label>
+        <input type="text" name="color" id="colorInput" />
+      </div>
+      <div>
+        <div>喜歡的寵物: cat</div>
+        <input type="hidden" name="pet" id="petInput" value="cat" />
+      </div>
+      <button type="button">普通的按鈕</button>
+      <!-- <button type="submit">提交</button> -->
+      <input type="submit" value="提交" />
+    </form>
+
+    <form id="signupForm">
+      <div>
+        <label for="accountInput">帳號</label>
+        <input type="text" name="account" id="accountInput" required />
+      </div>
+      <div>
+        <label for="passwordInput">密碼</label>
+        <input type="password" name="password" id="passwordInput" required minlength="6" maxlength="12" />
+      </div>
+      <div>
+        <label for="emailInput">Email</label>
+        <input type="email" name="email" id="emailInput" required />
+      </div>
+      <div>
+        <label for="ageInput">年齡</label>
+        <input type="number" name="age" id="ageInput" />
+      </div>
+      <div>
+        <label for="birthdayInput">生日</label>
+        <input type="date" name="birthday" id="birthdayInput" />
+      </div>
+      <div>
+        <label for="fileInput">檔案</label>
+        <input type="file" name="file" id="fileInput" />
+      </div>
+    </form>
+    <script>
+      /*
+      const nameInputEl = document.querySelector('#nameInput');
+      console.log(nameInputEl.value);
+      document.querySelector('#colorInput').value = 'white';
+
+      console.log(document.querySelector(`[name="pet"]`).value);
+
+      // blur (not focus) 的時候觸發
+      nameInputEl.addEventListener('change', (event) => {
+        console.log(event.target.value);
+      });
+      */
+
+      // JSON
+      document.querySelector('#infoForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log('表單已經被提交');
+        console.log(event.target.elements);
+        let formObj = {};
+        // formObj.color
+        // formObj['color']
+        // {
+        //   name: 'Allie',
+        //   color: 'white',
+        //   pet: 'cat',
+        // }
+
+        for (let element of event.target.elements) {
+          if (element.name) {
+            formObj[element.name] = element.value;
+          }
+        }
+        console.log(formObj);
+
+        // JSON.stringify(formObj)
+      });
+    </script>
   </body>
 </html>

@@ -51,7 +51,7 @@
   </head>
 
   <body>
-    <div>
+    <!-- <div>
       <button onclick="showAlert()">HTML onclick 呼叫 alert</button>
       <button id="alertBtn">DOM onclick 呼叫 alert</button>
       <button id="listenerAlertBtn">DOM addEventListener 呼叫 alert</button>
@@ -68,8 +68,13 @@
       <input type="text" id="keydownInput" value="keydown 事件" />
       <input type="text" id="keypressInput" value="keypress 事件" />
       <input type="text" id="keyupInput" value="keyup 事件" />
-    </div>
+    </div> -->
+
+    <!-- text, number..., submit, button -->
+    <input type="button" class="greetingBtn" data-index="0" value="打個招呼" />
+    <div class="greeting">Hi!</div>
     <script>
+      /*
       function showAlert() {
         alert('hi');
       }
@@ -104,6 +109,45 @@
 
       document.querySelector('#keyupInput').addEventListener('keyup', () => {
         console.log('keyup!');
+      });
+      */
+
+      // DOM 加載好時要做的事
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('loaded!');
+        const greetingBtnEl = document.querySelector('.greetingBtn');
+        const greetingEl = document.querySelector('.greeting');
+        // console.log(greetingBtnEl);
+
+        let visible = false;
+        greetingBtnEl.addEventListener('click', (event) => {
+          /*
+          console.log(event);
+          console.log(event.type);
+          console.log(event.target);
+          console.log(event.target.dataset.index);
+          */
+          // greetingEl.classList.add('show');
+          // greetingEl.classList.remove('show');
+          // greetingEl.classList.toggle('show');
+          /*
+          if (greetingEl.classList.contains('show')) {
+            greetingEl.classList.replace('show', 'hide');
+          } else {
+            greetingEl.classList.replace('hide', 'show');
+          }
+          */
+
+          // if(visible === true)
+          if (visible) {
+            greetingEl.classList.add('fadeOut');
+            greetingEl.classList.remove('fadeIn');
+          } else {
+            greetingEl.classList.add('fadeIn');
+            greetingEl.classList.remove('fadeOut');
+          }
+          visible = !visible;
+        });
       });
     </script>
   </body>
