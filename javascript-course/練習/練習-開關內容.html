@@ -167,6 +167,30 @@
         </div>
       </div>
     </div>
-    <script></script>
+    <script>
+      const btnEls = document.querySelectorAll('.btn');
+
+      let activeEl = null;
+      btnEls.forEach((btnEl, i, arr) => {
+        btnEl.addEventListener('mouseover', (event) => {
+          // event.target.nextElementSibling.classList.add('active');
+          if (activeEl) {
+            activeEl.classList.remove('active');
+          }
+          activeEl = event.target.nextElementSibling;
+          activeEl.classList.add('active');
+        });
+        btnEl.addEventListener('mouseout', (event) => {
+          // event.target.nextElementSibling.classList.remove('active');
+          if (activeEl) {
+            activeEl.classList.remove('active');
+          }
+          activeEl = null;
+        });
+        btnEl.addEventListener('click', (event) => {
+          event.target.nextElementSibling.lastElementChild.classList.toggle('active');
+        });
+      });
+    </script>
   </body>
 </html>
